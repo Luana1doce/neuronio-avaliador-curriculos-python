@@ -10,3 +10,14 @@ Entrada de Dados ( Área para recrutador entrar com termos relacionados a vaga d
 Tratamento de texto;
 Arquitetura de Rede Neural ( calculos de bias e pesos e ativação da função sigmoid);
 Exibição do resultado dos calculos em forma de porcentagem;
+
+<h2>Como Usar</h2>
+Prepare um arquivo .txt com o conteúdo do currículo.
+
+Execute o script: python nome_do_arquivo.py
+
+Insira os termos da vaga separados por vírgula.
+
+O sistema retornará a porcentagem de aderência e se o candidato é recomendado para avaliação.
+![Descrição da imagem](img/print_do_sistema.png)
+
