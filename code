@@ -1,0 +1,49 @@
+
+print("Digite termos relacionados a vaga separados por (,)")
+lista=input("Digite aqui:")
+
+candidatos=[termo.strip().lower() for termo in lista.split(",")]
+
+if len(candidatos) <15:
+   print("Informe no mínimo 15 termos!")
+   exit()
+
+candidatos=[v.lower() for v in candidatos]
+curriculo_avaliado=input("Digite um nome para o arquivo:")
+
+   
+try:
+
+    with open(curriculo_avaliado,"r", encoding="utf-8") as candidato:
+     arquivo=candidato.read().lower()
+    print("Curriculo do candidato",curriculo_avaliado)
+
+    resultado1=[1 if termo in arquivo else 0 for termo in candidatos]
+    
+
+except FileNotFoundError:
+    print("arquivo não existe")
+
+
+import random
+
+pesos=[random.random() for _ in range (len(candidatos))]
+
+soma=sum(x*p for x,p in zip(resultado1,pesos))
+
+bias=random.random()
+
+import math
+
+def sigmoid(c):
+   return 1/ (1+math.exp(-c))
+
+c=soma+bias
+result=sigmoid(c)
+print("Resultado",result)
+
+if result >=0.81:
+     print("Currículo dentro da espectativa! Vale Avaliar.")
+else: print("Currículo fora da faixa de expectativa!")
+
+print(f"Aderência ao perfil da vaga:{result*100:.2f}%")
