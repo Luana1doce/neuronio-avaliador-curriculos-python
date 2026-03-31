@@ -19,5 +19,5 @@ Execute o script: python nome_do_arquivo.py
 Insira os termos da vaga separados por vírgula.
 
 O sistema retornará a porcentagem de aderência e se o candidato é recomendado para avaliação.
-![Descrição da imagem](img/print_do_sistema.png)
+![Descrição da imagem](imagem.exemplo.PNG)
 
